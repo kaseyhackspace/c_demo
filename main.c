@@ -8,5 +8,5 @@ int main(int argc, char *argv[]){ // argc - number of arguments, argv array of c
     
     printf("Hello World!"); //prints hello world to the standard output stream
     
-    return 0; //returns '0', indicating 
+    return 0; //returns '0', indicating successful program exit
 }
