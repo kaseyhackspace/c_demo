@@ -13,49 +13,63 @@ int main(int argc, char *argv[]){ // argc - number of arguments, argv array of c
     float c = 0;
     int boolean;
     int choice;
+    char repeat;
 
-    /*input samples*/
-    printf("Enter float for a: ");
-    scanf("%f",&a);
-    printf("Enter float for b: ");
-    scanf("%f",&b);
+    
+    //loop until repeat variable is set to 'n'
+    do{ 
+        /*input samples*/
+        printf("Enter float for a: ");
+        scanf("%f",&a);
+        printf("Enter float for b: ");
+        scanf("%f",&b);
 
-    //print choices
-    printf("What operation do you want to perform on %f and %f?\n", a, b);
-    printf("1 \t-\t Addition \n");
-    printf("2 \t-\t Subtraction \n");
-    printf("3 \t-\t Multiplication \n");
-    printf("4 \t-\t Division \n");
-    printf("5 \t-\t Modulo \n");
-    scanf("%d",&choice);
-
-    /*
-    conditional statements
-    */
-    switch(choice){
-        case 1:
-            c = a + b;
-            printf("addition of %f,%f is %f\n", a, b, c);
-            break;
-        case 2:
-            c = a - b;
-            printf("subtraction of %f,%f is %f\n", a, b, c);
-            break;
-        case 3:
-            c = a * b;
-            printf("multiplication of %f,%f is %f\n", a, b, c);
-            break;
-        case 4:
-            c = a / b;
-            printf("division of %f,%f is %f\n", a, b, c);
-            break;
-        case 5:
-            c = (int)a % (int)b;
-            printf("modulo of %f,%f is %f\n", a, b, c);
-            break;
-        default:
-            printf("Invalid choice \n");
-    }
-
+        //print choices
+        printf("What operation do you want to perform on %f and %f?\n", a, b);
+        printf("1 \t-\t Addition \n");
+        printf("2 \t-\t Subtraction \n");
+        printf("3 \t-\t Multiplication \n");
+        printf("4 \t-\t Division \n");
+        printf("5 \t-\t Modulo \n");
+        printf("6 \t-\t Power \n");
+        scanf("%d",&choice);
+   
+        /*
+        conditional statements
+        */
+        switch(choice){
+            case 1:
+                c = a + b;
+                printf("addition of %f,%f is %f\n", a, b, c);
+                break;
+            case 2:
+                c = a - b;
+                printf("subtraction of %f,%f is %f\n", a, b, c);
+                break;
+            case 3:
+                c = a * b;
+                printf("multiplication of %f,%f is %f\n", a, b, c);
+                break;
+            case 4:
+                c = a / b;
+                printf("division of %f,%f is %f\n", a, b, c);
+                break;
+            case 5:
+                c = (int)a % (int)b;
+                printf("modulo of %f,%f is %f\n", a, b, c);
+                break;
+            case 6:
+                c = 1;
+                for(int ctr = 0;ctr < b; ctr ++){
+                    c = c * a;
+                }
+                printf("%f to the power of %f is %f \n", a, b, c);
+                break;
+            default:
+                printf("Invalid choice \n");
+        }
+        printf("Repeat? ('y' or 'n')");
+        scanf("\n%c",&repeat);
+    }while(repeat == 'y');
     return 0; //returns '0', indicating successful exit of program
 }
