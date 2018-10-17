@@ -3,6 +3,45 @@ Demo of conditional statements
 */
 #include <stdio.h> //include standard IO library to have access to basic functions
 #define SIZE 50 //define preprocessor replaces first string with value in the code
+
+float add(float a, float b){
+    float c;
+    c = a + b;
+    return c;
+}
+
+float sub(float a, float b){
+    float c;
+    c = a - b;
+    return c;
+}
+
+float mul(float a, float b){
+    float c;
+    c = a * b;
+    return c;
+}
+
+float div(float a, float b){
+    float c;
+    c = a / b;
+    return c;
+}
+
+float mod(float a,float b){
+    float c;
+    c = (int)a % (int)b;
+    return c;
+}
+
+void my_pow(float a, float b, float * c){
+    *c = 1.0;
+    for(int ctr = 0;ctr < b; ctr ++){
+        *c = *c * a;
+    }
+    return;
+}
+
 // main function: what gets executed when you run the program
 int main(int argc, char *argv[]){ // argc - number of arguments, argv array of command line arguments
     /*
@@ -39,30 +78,27 @@ int main(int argc, char *argv[]){ // argc - number of arguments, argv array of c
         */
         switch(choice){
             case 1:
-                c = a + b;
+                c = add(a,b);
                 printf("addition of %f,%f is %f\n", a, b, c);
                 break;
             case 2:
-                c = a - b;
+                c = sub(a,b);
                 printf("subtraction of %f,%f is %f\n", a, b, c);
                 break;
             case 3:
-                c = a * b;
+                c = mul(a,b);
                 printf("multiplication of %f,%f is %f\n", a, b, c);
                 break;
             case 4:
-                c = a / b;
+                c = div(a,b);
                 printf("division of %f,%f is %f\n", a, b, c);
                 break;
             case 5:
-                c = (int)a % (int)b;
+                c = mod(a,b);
                 printf("modulo of %f,%f is %f\n", a, b, c);
                 break;
             case 6:
-                c = 1;
-                for(int ctr = 0;ctr < b; ctr ++){
-                    c = c * a;
-                }
+                my_pow(a,b,&c);
                 printf("%f to the power of %f is %f \n", a, b, c);
                 break;
             default:
