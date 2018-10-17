@@ -8,5 +8,5 @@ This is a repository for speeding up and organizing teaching C with demo code us
 
 `git branch <branch>`
 
-### List branchs/chapters
+### List branches/chapters
 `git branch -a`
