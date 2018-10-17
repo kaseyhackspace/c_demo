@@ -32,26 +32,30 @@ int main(int argc, char *argv[]){ // argc - number of arguments, argv array of c
     /*
     conditional statements
     */
-    if(choice == 1){
-        c = a + b;
-        printf("addition of %f,%f is %f\n", a, b, c);
+    switch(choice){
+        case 1:
+            c = a + b;
+            printf("addition of %f,%f is %f\n", a, b, c);
+            break;
+        case 2:
+            c = a - b;
+            printf("subtraction of %f,%f is %f\n", a, b, c);
+            break;
+        case 3:
+            c = a * b;
+            printf("multiplication of %f,%f is %f\n", a, b, c);
+            break;
+        case 4:
+            c = a / b;
+            printf("division of %f,%f is %f\n", a, b, c);
+            break;
+        case 5:
+            c = (int)a % (int)b;
+            printf("modulo of %f,%f is %f\n", a, b, c);
+            break;
+        default:
+            printf("Invalid choice \n");
     }
-    else if(choice == 2){
-        c = a - b;
-        printf("subtraction of %f,%f is %f\n", a, b, c);
-    }
-    else if(choice == 3){
-        c = a * b;
-    printf("multiplication of %f,%f is %f\n", a, b, c);
-    }
-    else if (choice == 4){
-        c = a / b;
-        printf("division of %f,%f is %f\n", a, b, c);
-    }
-    else if (choice == 5){
-        c = (int)a % (int)b;
-        printf("modulo of %f,%f is %f\n", a, b, c);
-    }
-    
+
     return 0; //returns '0', indicating successful exit of program
 }
