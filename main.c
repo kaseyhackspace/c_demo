@@ -1,5 +1,5 @@
 /*
-Demo of basic input, output, also variables
+Demo of arithmetic and conditional operators
 */
 #include <stdio.h> //include standard IO library to have access to basic functions
 #define SIZE 50 //define preprocessor replaces first string with value in the code
@@ -8,31 +8,47 @@ int main(int argc, char *argv[]){ // argc - number of arguments, argv array of c
     /*
     Variable delaration
     */
-    int myint;
-    float myfloat;
-    char mychar;
-    double mydouble;
-    char mystring[SIZE];
+    float a = 0;
+    float b = 0;
+    float c = 0;
+    int boolean;
 
     /*input samples*/
-    printf("Enter integer: ");
-    scanf("%d",&myint);
-    printf("Enter float: ");
-    scanf("%f",&myfloat);
-    printf("Enter double: ");
-    scanf("%lf",&mydouble);
-    printf("Enter char: ");
-    scanf("\n%c",&mychar);
-    printf("Enter string: ");
-    scanf("\n%s",mystring);
-    //scanf("\n%[^\n]",mystring);
+    printf("Enter float for a: ");
+    scanf("%f",&a);
+    printf("Enter float for b: ");
+    scanf("%f",&b);
 
-    /*output samples*/
-    printf("your integer: %d \n",myint);
-    printf("your float: %f \n",myfloat);
-    printf("your double: %lf \n",mydouble);
-    printf("your char: %c \n",mychar);
-    printf("your string: %s \n",mystring);
+    /*
+    arithmetic operations 
+    */
+    c = a + b;
+    printf("addtion of %f,%f is %f\n", a, b, c);
+    c = a - b;
+    printf("subtraction of %f,%f is %f\n", a, b, c);
+    c = a * b;
+    printf("multiplication of %f,%f is %f\n", a, b, c);
+    c = a / b;
+    printf("division of %f,%f is %f\n", a, b, c);
+    c = (int)a % (int)b;
+    printf("modulo of %f,%f is %f\n", a, b, c);
+
+    /*
+    conditional operators
+    */
+    printf("\n\n");
+    boolean = a > b;
+    printf("%f > %f is %d \n", a, b, boolean);
+    boolean = a < b;
+    printf("%f < %f is %d \n", a, b, boolean);
+    boolean = a >= b;
+    printf("%f >= %f is %d \n", a, b, boolean);
+    boolean = a <= b;
+    printf("%f <= %f is %d \n", a, b, boolean);
+    boolean = a == b;
+    printf("%f == %f is %d \n", a, b, boolean);
+    boolean = a != b;
+    printf("%f != %f is %d \n", a, b, boolean);
     
     return 0; //returns '0', indicating successful exit of program
 }
