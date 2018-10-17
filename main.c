@@ -1,5 +1,5 @@
 /*
-Demo of arithmetic and conditional operators
+Demo of conditional statements
 */
 #include <stdio.h> //include standard IO library to have access to basic functions
 #define SIZE 50 //define preprocessor replaces first string with value in the code
@@ -12,6 +12,7 @@ int main(int argc, char *argv[]){ // argc - number of arguments, argv array of c
     float b = 0;
     float c = 0;
     int boolean;
+    int choice;
 
     /*input samples*/
     printf("Enter float for a: ");
@@ -19,36 +20,38 @@ int main(int argc, char *argv[]){ // argc - number of arguments, argv array of c
     printf("Enter float for b: ");
     scanf("%f",&b);
 
-    /*
-    arithmetic operations 
-    */
-    c = a + b;
-    printf("addtion of %f,%f is %f\n", a, b, c);
-    c = a - b;
-    printf("subtraction of %f,%f is %f\n", a, b, c);
-    c = a * b;
-    printf("multiplication of %f,%f is %f\n", a, b, c);
-    c = a / b;
-    printf("division of %f,%f is %f\n", a, b, c);
-    c = (int)a % (int)b;
-    printf("modulo of %f,%f is %f\n", a, b, c);
+    //print choices
+    printf("What operation do you want to perform on %f and %f?\n", a, b);
+    printf("1 \t-\t Addition \n");
+    printf("2 \t-\t Subtraction \n");
+    printf("3 \t-\t Multiplication \n");
+    printf("4 \t-\t Division \n");
+    printf("5 \t-\t Modulo \n");
+    scanf("%d",&choice);
 
     /*
-    conditional operators
+    conditional statements
     */
-    printf("\n\n");
-    boolean = a > b;
-    printf("%f > %f is %d \n", a, b, boolean);
-    boolean = a < b;
-    printf("%f < %f is %d \n", a, b, boolean);
-    boolean = a >= b;
-    printf("%f >= %f is %d \n", a, b, boolean);
-    boolean = a <= b;
-    printf("%f <= %f is %d \n", a, b, boolean);
-    boolean = a == b;
-    printf("%f == %f is %d \n", a, b, boolean);
-    boolean = a != b;
-    printf("%f != %f is %d \n", a, b, boolean);
+    if(choice == 1){
+        c = a + b;
+        printf("addition of %f,%f is %f\n", a, b, c);
+    }
+    else if(choice == 2){
+        c = a - b;
+        printf("subtraction of %f,%f is %f\n", a, b, c);
+    }
+    else if(choice == 3){
+        c = a * b;
+    printf("multiplication of %f,%f is %f\n", a, b, c);
+    }
+    else if (choice == 4){
+        c = a / b;
+        printf("division of %f,%f is %f\n", a, b, c);
+    }
+    else if (choice == 5){
+        c = (int)a % (int)b;
+        printf("modulo of %f,%f is %f\n", a, b, c);
+    }
     
     return 0; //returns '0', indicating successful exit of program
 }
